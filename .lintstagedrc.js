@@ -1,0 +1,16 @@
+const path = require("path");
+
+const buildEslintCommand = (filenames) =>
+  `next lint --fix --file ${filenames
+    .map((f) => path.relative(process.cwd(), f))
+    .join(" --file ")}`;
+
+const testCommand = (filenames) =>
+
+  `npm run test:staged -- ${filenames
+    .map((f) => path.relative(process.cwd(), f))}`;
+
+
+module.exports = {
+  "*.{ts,tsx}": [buildEslintCommand, testCommand],
+};

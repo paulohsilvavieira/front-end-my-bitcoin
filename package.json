@@ -10,7 +10,6 @@
     "lint:fix": "next lint --fix",
     "prepare": "husky install",
     "test": "jest --passWithNoTests  --runInBand --no-cache",
-    "pre-commit": "lint-staged",
     "test:staged": "npm test -- --findRelatedTests"
   },
   "dependencies": {

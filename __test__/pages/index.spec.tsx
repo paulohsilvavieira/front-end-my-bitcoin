@@ -1,10 +1,9 @@
 import Home from '@/pages';
 import { screen, render } from '@testing-library/react';
 
-describe('Index Page', () => {
-  test('Find hello word test', () => {
+describe('Home Page', () => {
+  test('Find Hello World test', () => {
     render(<Home />);
-
-    expect(screen.getByTitle('Hello World')).toBeInTheDocument();
+    expect(screen.getByText('Hello World!')).toBeInTheDocument();
   });
 });

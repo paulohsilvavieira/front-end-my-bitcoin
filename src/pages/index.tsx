@@ -1,3 +1,4 @@
+import { H1 } from '@/atoms/heading';
 import { TopMenuBar } from '@/molecules/topbar';
 import {
   faArrowUp,
@@ -46,5 +47,10 @@ export default function Home() {
       icon: <FontAwesomeIcon icon={faWallet} style={{ marginRight: '10px' }} />
     }
   ];
-  return <TopMenuBar itens={itens} />;
+  return (
+    <>
+      <TopMenuBar itens={itens} />
+      <H1>Hello World!</H1>
+    </>
+  );
 }

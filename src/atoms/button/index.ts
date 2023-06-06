@@ -4,11 +4,13 @@ type TypeButton = 'primary' | 'secondary' | 'danger' | 'success';
 
 type SizeButton = 'lg' | 'md' | 'sm';
 
-export interface PropsButton {
+interface PropsButton {
   sizeButton: SizeButton;
   typeButton: TypeButton;
+  fullButton?: boolean;
 }
-export function getBackgroundColor(typeButton: TypeButton) {
+
+function getBackgroundColor(typeButton: TypeButton) {
   const backgroundColor = {
     primary: theme.colors.purple[600],
     secondary: theme.colors.gray[300],
@@ -18,46 +20,60 @@ export function getBackgroundColor(typeButton: TypeButton) {
   return backgroundColor[typeButton];
 }
 
-export function getFontColor(typeButton: TypeButton) {
+function getBackgroundColorActive(typeButton: TypeButton) {
   const backgroundColor = {
-    primary: theme.colors.indigo[100],
-    secondary: theme.colors.purple[600],
-    success: theme.colors.indigo[100],
-    danger: theme.colors.indigo[100]
+    primary: theme.colors.purple[800],
+    secondary: theme.colors.gray[400],
+    success: theme.colors.green[600],
+    danger: theme.colors.red[600]
   };
   return backgroundColor[typeButton];
 }
 
-export function getSizeWidth(size: SizeButton) {
+function getFontColor(typeButton: TypeButton) {
+  const fontColor = {
+    primary: theme.colors.indigo[100],
+    secondary: theme.colors.purple[600],
+    success: theme.colors.white,
+    danger: theme.colors.white
+  };
+  return fontColor[typeButton];
+}
+
+function getSizePadding(size: SizeButton) {
   const sizePx = {
-    lg: '115px',
-    md: '86px',
-    sm: '70px'
+    lg: '1rem 2rem',
+    md: '0.75rem 1.5rem',
+    sm: '0.5rem 1rem'
   };
   return sizePx[size];
 }
 
-export function getSizeHeight(size: SizeButton) {
+function getFontSize(size: SizeButton) {
   const sizePx = {
-    lg: '30px',
-    md: '24px',
-    sm: '18px'
-  };
-  return sizePx[size];
-}
-
-export function getBorderRadius(size: SizeButton) {
-  const sizePx = {
-    lg: '4px',
-    md: '2.99px',
-    sm: '2.29px'
+    lg: '1.25rem',
+    md: '1.1rem',
+    sm: '0.9rem'
   };
   return sizePx[size];
 }
 
 export const Button = styled.button<PropsButton>`
   background-color: ${({ typeButton }) => getBackgroundColor(typeButton)};
-  width: ${({ sizeButton }) => getSizeWidth(sizeButton)};
-  heigth: ${({ sizeButton }) => getSizeHeight(sizeButton)};
-  border-radius: ${({ sizeButton }) => getBorderRadius(sizeButton)};
+  width: ${({ fullButton }) => (fullButton ? '100%' : 'auto')};
+  font-size: ${({ sizeButton }) => getFontSize(sizeButton)};
+  color: ${({ typeButton }) => getFontColor(typeButton)};
+  padding: ${({ sizeButton }) => getSizePadding(sizeButton)};
+  height: auto;
+  border: none;
+  border-radius: 0.25rem;
+  line-height: 12px;
+  text-align: center;
+  font-family: 'Inter';
+  font-weight: 500;
+  &:active {
+    background-color: ${({ typeButton }) =>
+      getBackgroundColorActive(typeButton)};
+  }
+  cursor: pointer;
 `;

@@ -12,7 +12,7 @@ interface PropsButton {
 
 function getBackgroundColor(typeButton: TypeButton) {
   const backgroundColor = {
-    primary: theme.colors.purple[600],
+    primary: theme.colors.blue[600],
     secondary: theme.colors.gray[300],
     success: theme.colors.green[500],
     danger: theme.colors.red[500]
@@ -33,7 +33,7 @@ function getBackgroundColorActive(typeButton: TypeButton) {
 function getFontColor(typeButton: TypeButton) {
   const fontColor = {
     primary: theme.colors.indigo[100],
-    secondary: theme.colors.purple[600],
+    secondary: theme.colors.blue[600],
     success: theme.colors.white,
     danger: theme.colors.white
   };

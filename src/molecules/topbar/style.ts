@@ -33,12 +33,12 @@ export const MenuItem = styled.li`
 export const MenuLink = styled.a<{ isActive?: boolean }>`
   display: inline-block;
   font-size: 0.895rem;
-  color: ${(props) => (props.isActive ? theme.colors.purple[500] : '#6f6f6f')};
+  color: ${(props) => (props.isActive ? theme.colors.blue[500] : '#6f6f6f')};
   text-decoration: none;
 
   transition: color 0.3s;
 
   &:hover {
-    color: ${() => theme.colors.purple[500]};
+    color: ${() => theme.colors.blue[500]};
   }
 `;

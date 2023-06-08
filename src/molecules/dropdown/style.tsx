@@ -47,6 +47,6 @@ export const DropdownMenuLink = styled.a<{ colorHover?: string }>`
   color: #6f6f6f;
   font-size: 0.9rem;
   :hover {
-    color: ${({ colorHover }) => colorHover ?? theme.colors.purple[500]};
+    color: ${({ colorHover }) => colorHover ?? theme.colors.blue[500]};
   }
 `;

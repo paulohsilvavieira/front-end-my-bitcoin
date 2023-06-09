@@ -48,9 +48,7 @@ export const CardWallet: React.FC<Props> = ({
     <CardContainer>
       <CardTitle>{walletName}</CardTitle>
       <CardContent>
-        <CardMoneyAmount>
-          <H3>{amountFiat}</H3>
-        </CardMoneyAmount>
+        <CardMoneyAmount>{amountFiat}</CardMoneyAmount>
         <Text
           style={{
             color: '#828181',

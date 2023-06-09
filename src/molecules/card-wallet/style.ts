@@ -25,7 +25,8 @@ export const CardContentWallet = styled.p`
 `;
 
 export const CardMoneyAmount = styled.span`
-  font-weight: 'bold';
+  font-weight: bold;
+  font-size: 1.8rem;
   color: #333;
 `;
 

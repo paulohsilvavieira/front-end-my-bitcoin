@@ -21,7 +21,7 @@ export const DropdownMenu = styled.ul<{ isOpen: boolean; leftOpen: boolean }>`
   top: 25px;
   right: ${({ leftOpen }) => (leftOpen ? 'auto' : 0)};
   display: ${({ isOpen }) => (isOpen ? 'block' : 'none')};
-  background-color: #f8f8f8;
+  background-color: #fff;
   list-style: none;
   font-size: 0.9rem;
   min-width: 170px;

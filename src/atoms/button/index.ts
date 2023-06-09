@@ -22,7 +22,7 @@ function getBackgroundColor(typeButton: TypeButton) {
 
 function getBackgroundColorActive(typeButton: TypeButton) {
   const backgroundColor = {
-    primary: theme.colors.purple[800],
+    primary: theme.colors.blue[800],
     secondary: theme.colors.gray[400],
     success: theme.colors.green[600],
     danger: theme.colors.red[600]
@@ -52,7 +52,7 @@ function getSizePadding(size: SizeButton) {
 function getFontSize(size: SizeButton) {
   const sizePx = {
     lg: '1.25rem',
-    md: '1.1rem',
+    md: '1rem',
     sm: '0.9rem'
   };
   return sizePx[size];
@@ -69,9 +69,35 @@ export const Button = styled.button<PropsButton>`
   border-radius: 0.25rem;
   line-height: 12px;
   text-align: center;
-  font-family: 'Inter';
   font-weight: 500;
   &:active {
+    background-color: ${({ typeButton }) =>
+      getBackgroundColorActive(typeButton)};
+  }
+  &:hover {
+    background-color: ${({ typeButton }) =>
+      getBackgroundColorActive(typeButton)};
+  }
+  cursor: pointer;
+`;
+export const ButtonLink = styled.a<PropsButton>`
+  text-decoration: none;
+  background-color: ${({ typeButton }) => getBackgroundColor(typeButton)};
+  width: ${({ fullButton }) => (fullButton ? '100%' : 'auto')};
+  font-size: ${({ sizeButton }) => getFontSize(sizeButton)};
+  color: ${({ typeButton }) => getFontColor(typeButton)};
+  padding: ${({ sizeButton }) => getSizePadding(sizeButton)};
+  height: auto;
+  border: none;
+  border-radius: 0.25rem;
+  line-height: 12px;
+  text-align: center;
+  font-weight: 500;
+  &:active {
+    background-color: ${({ typeButton }) =>
+      getBackgroundColorActive(typeButton)};
+  }
+  &:hover {
     background-color: ${({ typeButton }) =>
       getBackgroundColorActive(typeButton)};
   }

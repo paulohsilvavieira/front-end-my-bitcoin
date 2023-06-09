@@ -1,4 +1,3 @@
-import { H3 } from '@/atoms/heading';
 import { faCaretDown, faCaretUp } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { CardContainer, CardTitle, CardContent } from '../card';

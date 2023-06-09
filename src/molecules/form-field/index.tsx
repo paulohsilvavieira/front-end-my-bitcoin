@@ -6,19 +6,28 @@ interface Props {
   label?: string;
   sizeInput?: 'sm' | 'md' | 'lg';
   type: string;
+  placeHolder: string;
   value: string;
   onChange: (event: ChangeEvent<HTMLInputElement>) => void;
 }
 
-export function FormField({ label, type, value, onChange, sizeInput }: Props) {
+export function FormField({
+  label,
+  type,
+  value,
+  onChange,
+  sizeInput,
+  placeHolder
+}: Props) {
   return (
     <FormFieldContainer>
-      <Label>{label}</Label>
+      <Label sizeInput="md">{label}</Label>
       <Input
         type={type}
         value={value}
         onChange={onChange}
         sizeInput={sizeInput ?? 'md'}
+        placeholder={placeHolder}
       />
     </FormFieldContainer>
   );

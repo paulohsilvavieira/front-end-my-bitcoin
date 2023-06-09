@@ -30,7 +30,8 @@
     "react-hooks/exhaustive-deps": "warn",
     "react/react-in-jsx-scope": "off",
     "prettier/prettier": "error",
-    "testing-library/prefer-screen-queries":"off"
+    "testing-library/prefer-screen-queries":"off",
+    "@typescript-eslint/no-explicit-any":"off"
   },
   "overrides": [
     // Only uses Testing Library lint rules in test files

@@ -18,7 +18,7 @@ export const CardTitle = styled(H6)`
   white-space: nowrap;
 `;
 
-export const CardContent = styled.p`
+export const CardContent = styled.div`
   font-size: 1rem;
   color: #666666;
 `;

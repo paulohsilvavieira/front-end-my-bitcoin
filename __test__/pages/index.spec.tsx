@@ -2,8 +2,8 @@ import Home from '@/pages/home';
 import { screen, render } from '@testing-library/react';
 
 describe('Home Page', () => {
-  test('Find Hello World test', () => {
+  test('Find Wallets tests', () => {
     render(<Home />);
-    expect(screen.getByText('Hello World!')).toBeInTheDocument();
+    expect(screen.getByText('Wallets')).toBeInTheDocument();
   });
 });
